@@ -20,7 +20,7 @@ script:
 
 after_success:
   - cat ./packages/nwb-react-app/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-#  - cat ./packages/nwb-web-module/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./packages/nwb-web-module/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 branches:
   except:
