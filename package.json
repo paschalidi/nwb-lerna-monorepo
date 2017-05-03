@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "lerna": "^2.0.0-rc.4"
   },
   "name": "@how-to-react/nwb-lerna-travis",
@@ -7,9 +8,10 @@
   "description": "NWB with lerna and travis integration",
   "main": "index.js",
   "scripts": {
+    "coverage:combine": "istanbul report --include \"./packages/**/coverage/coverage.json\" lcovonly text-summary",
     "postinstall": "lerna bootstrap --hoist",
     "release": "lerna publish --conventional-commits",
-    "test": "lerna exec npm test:coverage"
+    "test": "lerna exec npm run test:coverage"
   },
   "repository": {
     "type": "git",

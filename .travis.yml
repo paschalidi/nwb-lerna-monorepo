@@ -13,13 +13,13 @@ node_js:
 
 before_install:
   - npm i -g npm@^2.0.0
-  - npm install codecov.io coveralls request lerna@2.0.0-rc.4 istanbul
+  - npm install codecov.io coveralls request lerna@2.0.0-rc.4
 
 script:
   - npm test
 
 after_success:
-  - istanbul report --include "./packages/**/coverage/coverage.json" lcovonly
+  - npm run coverage:combine
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 branches:
