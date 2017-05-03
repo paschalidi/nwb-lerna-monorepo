@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap --hoist",
     "release": "lerna publish --conventional-commits",
-    "test": "lerna exec npm test"
+    "test": "lerna exec npm test:coverage"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,15 @@
 module.exports = {
   type: 'react-app',
-  babel: {
-    plugins: process.env.NODE_ENV === 'test' ? ['istanbul'] : []
+  karma: {
+    reporters: ['coverage'],
+    extra: {
+      coverageReporter: {
+        dir : 'coverage/',
+        reporters: [
+          {type: 'html', subdir: 'report-html'},
+          {type: 'json', subdir: './', file: 'coverage.json'}
+        ]
+      }
+    }
   }
 };
