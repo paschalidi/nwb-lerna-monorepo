@@ -1,0 +1,27 @@
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+    - $HOME/.npm
+
+notifications:
+  email: false
+
+node_js:
+  - '7'
+
+before_install:
+  - npm i -g npm@^2.0.0
+  - npm install codecov.io coveralls request lerna@2.0.0-rc.4
+
+script:
+  - npm test
+
+after_success:
+  - cat ./packages/nwb-react-app/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./packages/nwb-web-module/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

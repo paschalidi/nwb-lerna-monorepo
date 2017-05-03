@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "lerna": "^2.0.0-rc.4"
+  },
+  "name": "@how-to-react/nwb-lerna-travis",
+  "version": "1.0.0",
+  "description": "NWB with lerna and travis integration",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "lerna bootstrap --hoist",
+    "release": "lerna publish --conventional-commits",
+    "test": "lerna exec npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/how-to-react/nwb-lerna-travis.git"
+  },
+  "author": "Stephen Fraser <stephen.fraser@digirati.com> (https://stephen.wf/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/how-to-react/nwb-lerna-travis/issues"
+  },
+  "homepage": "https://github.com/how-to-react/nwb-lerna-travis#readme"
+}

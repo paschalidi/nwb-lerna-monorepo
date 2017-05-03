@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.nyc_output
+coverage
+lerna-debug.log
+node_modules/
